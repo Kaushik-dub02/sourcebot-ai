@@ -57,7 +57,10 @@ async def source_with_jd(
         
         return results
 
+
     except ValueError as ve:
+        print(ve)
         raise HTTPException(status_code=400, detail=f"Invalid input: {str(ve)}")
     except Exception as e:
+        print(e)
         raise HTTPException(status_code=500, detail=f"An error occurred: {str(e)}")
